@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title> 
+    <style>
+        :root {
+            --sidebar-text-color : white;
+            --font-size-xs :12px;
+            --font-size-s :14px;
+            --font-size-m :20px;
+        }
+
+        main.content {
+            grid-area: 3 / 2 / 11 / 3;
+            background-color: lightgray;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding: 15px;
+            gap: 10px;
+        }
+       
+        .announcements{
+            grid-column: 2/3;
+            grid-row: 1/2;
+            overflow: auto;
+        }
+
+        .announcements-title{
+            font-size: var(--font-size-m);
+            font-weight: 600;
+            padding-bottom: 5px; 
+        }
+        .announcement-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 5px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .announcement-item-title {
+            font-weight: 600;
+            padding-bottom: 5px;
+        }
+        .announcement-item-desc {
+            font-size: var(--font-size-s);
+            color: rgb(105, 102, 102);
+        }
+        .trending {
+            grid-column: 2/3;
+            grid-row: 2/3;
+            overflow: auto;
+        }
+        .trending-header{
+            font-size: var(--font-size-m);
+            font-weight: 600;
+            padding-bottom: 5px; 
+        }
+        .trending-list {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            row-gap: 5px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .trending-item-text {
+            font-size: var(--font-size-s);
+            color: rgb(105, 102, 102);
+            padding: 3px;
+        }
+        hr {
+            width: 100%;
+        }
+        .sky-circle {
+            background: skyblue;
+            border-radius: 50%;
+        }
+        .pink-circle {
+            background: pink;
+            border-radius: 50%;
+        }
+        .grey-circle {
+            background: grey;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="./assets/view-dashboard-outline.svg" alt="dashboard" height="40px" width="40px">
+                <span>Dashboard</span>
+            </div>
+            <div class="sidebar-menu">
+                <img height="25px" width="25px" alt="home" src="./assets/home.svg">
+                <span>Home</span>
+                <img height="25px" width="25px" alt="profile" src="./assets/face-man-profile.svg">
+                <span>Profile</span>
+                <img height="25px" width="25px" alt="messages" src="./assets/message-reply.svg">
+                <span>Messages</span>
+                <img height="25px" width="25px" alt="history" src="./assets/history.svg">
+                <span>History</span>
+                <img height="25px" width="25px" alt="tasks" src="./assets/calendar-check-outline.svg">
+                <span>Tasks</span>
+                <img height="25px" width="25px" alt="Communities" src="./assets/google-circles-communities.svg">
+                <span>Communities</span>
+            </div>
+            <div class="sidebar-menu">
+                <img height="25px" width="25px" alt="settings" src="./assets/cog-outline.svg">
+                <span>Settings</span>
+                <img height="25px" width="25px" alt="support" src="./assets/help.svg">
+                <span>Support</span>
+                <img height="25px" width="25px" alt="privacy" src="./assets/lock-check-outline.svg">
+                <span>Privacy</span>
+            </div>
+        </aside>
+        <header>
+            <div class="head1">
+                <div class="head1-item1">
+                    <img src="./assets/magnify.svg" height="25px" width="25px" alt="search">
+                    <input type="text">
+                </div>
+                <div class="head1-item2">
+                    <img src="./assets/bell-ring-outline.svg" height="25px" width="25px" alt="ring">
+                    <div class="yellow-circle">
+                        <img src="./assets/cat.svg" height="40px" width="40px" alt="cat">
+                    </div>
+                    <span>Sahil Pandith</span>
+                </div>
+            </div>
+            <div class="head2">
+                <div class="head2-item1">
+                    <div class="yellow-circle-large">
+                        <img src="./assets/cat.svg" height="60px" width="60px" alt="cat">
+                    </div>
+                    <div class="head2-item1-text">
+                        <div>Hi there,</div>
+                        <div>Sahil Pandith (@sahil)</div>
+                    </div>
+                </div>
+                <div class="head2-item2">
+                    <button>New</button>
+                    <button>Upload</button>
+                    <button>Share</button>
+                </div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="your-projects">
+                <div class="project-header">Your Projects</div>
+                <div class="project-list">
+                    <div class="project-item">
+                        <div class="project-title">
+                            Super Cool Project
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk abkaskash
+                             ashvjsvjsaashhsbad asdksajbkajds
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Less Cool Project
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk asbkshbkasas ajskdbak
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Impossible App
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk askdbaks askbsabkas
+                             asvjhvajs
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Super Cool Project
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk abkaskash
+                             ashvjsvjsaashhsbad asdksajbkajds
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Less Cool Project
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk asbkshbkasas ajskdbak
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Impossible App
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk askdbaks askbsabkas
+                             asvjhvajs
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Super Cool Project
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk abkaskash
+                             ashvjsvjsaashhsbad asdksajbkajds
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Less Cool Project
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk asbkshbkasas ajskdbak
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Impossible App
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk askdbaks askbsabkas
+                             asvjhvajs
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Super Cool Project
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk abkaskash
+                             ashvjsvjsaashhsbad asdksajbkajds
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Less Cool Project
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk asbkshbkasas ajskdbak
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            Impossible App
+                        </div>
+                        <div class="project-desc">
+                            gsgvasj abajshsjahj haskhsjh abshdk akjsakhkas ahkasgkhs
+                             akshkash jaksjkjdsakjnjasjsa jaskjgkjsk askdhk askdbaks askbsabkas
+                             asvjhvajs
+                        </div>
+                        <div class="project-actions">
+                            <img height="25px" width="25px" alt="star" src="./assets/star-plus-outline.svg">
+                            <img height="25px" width="25px" alt="eye" src="./assets/eye-plus-outline.svg">
+                            <img height="25px" width="25px" alt="share" src="./assets/share-variant-outline.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="announcements">
+                <div class="announcements-title">Announcements</div>
+                <div class="announcement-list">
+                    <div class="announcement-item">
+                        <div class="announcement-item-title">Site Maintainance</div>
+                        <div class="announcement-item-desc">hdjhgjahj askhajhsvj asjvsajha kahsbhbsa
+                            asbjhvsja ashbjhsaj askhasvjda
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="announcement-item">
+                        <div class="announcement-item-title">Community Share Day</div>
+                        <div class="announcement-item-desc">hdjhgjahj askhajhsvj asjvsajha kahsbhbsa
+                            asbjhvsja ashbjhsaj askhasvjda
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="announcement-item">
+                        <div class="announcement-item-title">Updated Privacy policy</div>
+                        <div class="announcement-item-desc">hdjhgjahj askhajhsvj asjvsajha kahsbhbsa
+                            asbjhvsja ashbjhsaj askhasvjda
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trending">
+                <div class="trending-header">Trending</div>
+                <div class="trending-list">
+                        <div class="sky-circle">
+                            <img src="./assets/dog.svg" height="40px" width="40px" alt="cat">
+                        </div>
+                        <div class="trending-item-text">
+                            <div>@tegan</div>
+                            <div>World Peace Leader</div>
+                        </div>
+                        <div class="yellow-circle">
+                            <img src="./assets/cat.svg" height="40px" width="40px" alt="cat">
+                        </div>
+                        <div class="trending-item-text">
+                            <div>@sahil</div>
+                            <div>Super Cool project</div>
+                        </div>
+                        <div class="pink-circle">
+                            <img src="./assets/face-woman-outline.svg" height="40px" width="40px" alt="cat">
+                        </div>
+                        <div class="trending-item-text">
+                            <div>@kendall</div>
+                            <div>Life Changing app</div>
+                        </div>
+                        <div class="grey-circle">
+                            <img src="./assets/teddy-bear.svg" height="40px" width="40px" alt="cat">
+                        </div>
+                        <div class="trending-item-text">
+                            <div>@alex</div>
+                            <div>Modern Family</div>
+                        </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
